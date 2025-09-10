@@ -27,7 +27,7 @@ const multerFilter = (req,file,cb)=>{
     }
     else 
     {
-        cb(new AppError('Not an image! Please upload an image file.','404'),false) ;
+        cb(new AppError('Not an image! Please upload an image file.',404),false) ;
     }
             
 }
@@ -86,7 +86,7 @@ exports.getproduct = catchAsync(async(req,res,next)=>{
     //no product found with passed id
     if(!product)
     {
-        return next(new AppError('no product found with this ID...','404'));
+        return next(new AppError('no product found with this ID...',404));
     }
 
     return res.status(200).json({
@@ -113,7 +113,7 @@ exports.updateProduct = catchAsync(async(req,res,next)=>{
     //no product found with passed id
     if(!updatedProduct)
     {
-        return next(new AppError('no product found with this ID...','404'));
+        return next(new AppError('no product found with this ID...',404));
     }
 
     return res.status(200).json({
@@ -129,7 +129,7 @@ exports.deleteProduct = catchAsync(async (req,res,next)=>{
 
     if(!product)
     {
-        return next(new AppError('no product found with this ID...','404'));
+        return next(new AppError('no product found with this ID...',404));
     }
 
     return res.status(200).json({
