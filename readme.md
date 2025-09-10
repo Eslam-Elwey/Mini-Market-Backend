@@ -44,8 +44,7 @@ Includes JWT authentication, role-based authorization (admin/user), error handli
 - [sharp](https://www.npmjs.com/package/sharp) (for image processing)
 
 ## API Endpoints
-
-Auth
+### Auth
 
 - POST /api/v1/users/signup → Register new user
 
@@ -63,7 +62,7 @@ Auth
 
 - DELETE /api/v1/users/:id → Delete user
 
-- Products
+### Products
 
 - GET /api/v1/products/ → Get all products
 
@@ -74,3 +73,4 @@ Auth
 - PATCH /api/v1/products/:id → Update product (with image upload, Admin only)
 
 - DELETE /api/v1/products/:id → Delete product (Admin only)
+
