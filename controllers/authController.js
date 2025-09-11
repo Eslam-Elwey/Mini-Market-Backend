@@ -18,11 +18,17 @@ exports.signup = catchAsync(async(req,res,next)=>{
     last_name : req.body.last_name  ,
     email : req.body.email,
     password :req.body.password ,
-    image : req.body.image || 'default.img'
+    image : req.body.image || 'default.img' ,
+    _id:req._id //set from previous middle ware
 
 }) ;
 
 const token = signToken(user._id) ;
+
+if (req.file) {
+        user.image = req.file.filename; 
+        await user.save();
+    }
 
 user.password = undefined;
 
