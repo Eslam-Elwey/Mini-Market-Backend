@@ -34,7 +34,7 @@ user.password = undefined;
 
     res.status(201).json({
         status:'success' ,
-        token,
+        /* token, */
         data : {
             user
         }
@@ -70,7 +70,11 @@ exports.login = catchAsync(async(req,res,next)=>{
      res.status(200).json({
         status:'success' ,
         token,
-        role : user.role
+        role : user.role ,
+		first_name : user.first_name ,
+		last_name :  user.last_name,
+		image : user.image
+		
     })
 
 
